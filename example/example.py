@@ -12,3 +12,7 @@ print(post.text)
 
 get = requests.get(url + api)
 print(get.text)
+
+
+delete = requests.delete(url + api, json=endpoint)
+print(delete.text)
