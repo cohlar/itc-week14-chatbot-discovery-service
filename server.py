@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 
-endpoints = set
+endpoints = set()
 
 
 @app.route('/api/discovery', methods=['POST'])
@@ -23,7 +23,7 @@ def add_endpoint():
 @app.route('/api/discovery', methods=['GET'])
 def get_endpoints():
     global endpoints
-    return jsonify({'endpoints': endpoints}), 200
+    return jsonify({'endpoints': list(endpoints)}), 200
 
 
 @app.route('/api/discovery', methods=['POST'])
